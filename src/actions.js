@@ -15,11 +15,8 @@ export function decrementAge() {
 }
 
 export function resetAge() {
-  return (dispatch) => {
-    setTimeout(() => dispatch({
-      type: RESET_AGE,
-      redraw: true,
-      age: 30
-    }), 2000);
+  return {
+    type: RESET_AGE,
+    age: 30
   };
 }
