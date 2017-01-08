@@ -1,6 +1,6 @@
 import m from 'mithril';
 import {connect} from 'mithril-redux';
-import {incrementAge, decrementAge, resetAge} from './actions';
+import {incrementAge, decrementAge, resetAge, openSidebar, closeSidebar} from './actions';
 
 class _NameBox {
   view(ctrl, {name}) {
@@ -19,6 +19,20 @@ class _AgeBox {
   }
 }
 
+class _SideBar {
+  view(ctrl, {sidebar_open}) {
+    return m('div', [
+      m('div.sidebar', 'I am the sidebar ' + sidebar_open),
+      m('button', { onclick: sidebar_open ? ctrl.closeSidebar() : ctrl.openSidebar() }, 'toggle_sidebar')
+    ]);
+  }
+}
+
+
+export const SideBar = connect((state) => ({sidebar_open: state.sidebar_open}), {
+  closeSidebar: closeSidebar,
+  openSidebar: openSidebar
+})(_SideBar);
 
 export const NameBox = connect((state) => ({name: state.name}))(_NameBox);
 
