@@ -20,10 +20,8 @@ function age(state = 0, action) {
 
 function sidebar_open(state = {}, action) {
   switch (action.type) {
-    case Actions.OPEN_SIDEBAR:
-      return action.sidebar_open;
-    case Actions.CLOSE_SIDEBAR:
-      return action.sidebar_open;
+    case Actions.TOGGLE_SIDEBAR:
+      return action.value;
     default:
       return state;
   }
