@@ -11,7 +11,14 @@ var static = require('node-static');
 
 var paths = {
   devRoot: 'src',
-  js: 'src/index.js',
+  js: [
+    'src/index.js',
+    'src/actions.js',
+    'src/reducers.js',
+    'src/root.js',
+    'src/store.js',
+    'src/components.js'
+  ],
   static: ['src/index.html', 'src/main.css']
 };
 
