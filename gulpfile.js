@@ -10,17 +10,17 @@ var watchify = require('watchify');
 var static = require('node-static');
 
 var paths = {
-  devRoot: 'src',
+  static: 'public',
+  devRoot: 'public',
   js: [
-    'src/index.js',
-    'src/actions.js',
-    'src/reducers.js',
-    'src/root.js',
-    'src/store.js',
-    'src/SidebarContainer.js',
-    'src/SidebarView.js'
-  ],
-  static: ['src/index.html', 'src/main.css']
+    'src/components/Layout.js',
+    'src/components/SidebarContainer.js',
+    'src/components/SidebarView.js',
+    'src/state/actions.js',
+    'src/state/reducers.js',
+    'src/state/store.js',
+    'src/App.js'
+  ]
 };
 
 gulp.task('default', ['js', 'copy', 'watch', 'serve']);
@@ -35,7 +35,7 @@ function bundle(bundler) {
       // .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
       // .pipe(sourcemaps.write()) // writes .map file
     //
-    .pipe(gulp.dest('./src'));
+    .pipe(gulp.dest('public'));
 }
 
 function bundleConfig(bundler) {
@@ -56,21 +56,9 @@ gulp.task('js', function () {
   return bundle(bundler);
 });
 
-gulp.task('watchjs', function () {
-  var args = watchify.args;
-  args.detectGlobals = true;
-  var bundler = watchify(browserify(paths.js, args));
-  // add any other browserify options or transforms here
-  bundleConfig(bundler);
-
-  bundler.on('update', bundle.bind(null, bundler)); // on any dep update, runs the bundler
-  bundler.on('log', gutil.log); // output build logs to terminal
-  return bundle(bundler);
-});
-
 gulp.task('copy', function () {
   return gulp.src(paths.static)
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('watch', function () {

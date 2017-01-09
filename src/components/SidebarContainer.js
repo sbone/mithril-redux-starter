@@ -1,6 +1,6 @@
 import { connect } from 'mithril-redux';
 import SidebarView from './SidebarView';
-import { openSidebar, closeSidebar } from './actions';
+import { openSidebar, closeSidebar } from '../state/actions';
 
 const mapStateToProps = (state) => ({
   sidebar: state.sidebar

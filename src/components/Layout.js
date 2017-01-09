@@ -1,10 +1,10 @@
 import m from 'mithril';
 import { SidebarContainer } from './SidebarContainer';
 
-class Root {
+class Layout {
   view() {
     return m('div', [SidebarContainer]);
   }
 }
 
-export default new Root();
+export default new Layout();
