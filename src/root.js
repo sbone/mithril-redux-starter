@@ -1,9 +1,9 @@
 import m from 'mithril';
-import {SideBar} from './components';
+import { SidebarContainer } from './SidebarContainer';
 
 class Root {
   view() {
-    return m('div', [SideBar]);
+    return m('div', [SidebarContainer]);
   }
 }
 

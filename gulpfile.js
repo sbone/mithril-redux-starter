@@ -17,7 +17,8 @@ var paths = {
     'src/reducers.js',
     'src/root.js',
     'src/store.js',
-    'src/components.js'
+    'src/SidebarContainer.js',
+    'src/SidebarView.js'
   ],
   static: ['src/index.html', 'src/main.css']
 };
