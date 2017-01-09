@@ -1,0 +1,16 @@
+body {
+}
+.sidebar {
+  width: 320px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: blue;
+  transition: all .2s ease-out;
+  transform: translateX(320px);
+}
+.sidebar.is-active {
+  transform: translateX(0);
+}
