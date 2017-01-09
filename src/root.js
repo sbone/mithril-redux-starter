@@ -1,9 +1,9 @@
 import m from 'mithril';
-import {NameBox, AgeBox, SideBar} from './components';
+import {SideBar} from './components';
 
 class Root {
   view() {
-    return m('div', [NameBox, AgeBox, SideBar]);
+    return m('div', [SideBar]);
   }
 }
 

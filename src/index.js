@@ -4,8 +4,6 @@ import configStore from './store';
 import Root from './root';
 
 const store = configStore({
-  name: 'Dingleberry',
-  age: 31,
   sidebar_open: false
 });
 
