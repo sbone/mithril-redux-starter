@@ -22,9 +22,9 @@ class _AgeBox {
 class _SideBar {
   view(ctrl, {sidebar_open}) {
     return m('div', [
-      m('div.sidebar' + (sidebar_open ? '.is-active' : ''), [
+      m('div.sidebar.padding-medium' + (sidebar_open ? '.is-active' : ''), [
         m('button.btn-red', { onclick: ctrl.closeSidebar() }, 'Close'),
-        m('p', 'I am the sidebar ' + sidebar_open)
+        m('p', 'The sidebar is ' + (sidebar_open ? 'open' : 'closed'))
       ]),
       m('button' + (sidebar_open ? '.btn-red' : '.btn-teal'), {
         onclick: sidebar_open ? ctrl.closeSidebar() : ctrl.openSidebar()
