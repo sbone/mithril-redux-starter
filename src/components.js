@@ -24,7 +24,7 @@ class _SideBar {
     return m('div', [
       m('div.sidebar.padding-medium' + (sidebar_open ? '.is-active' : ''), [
         m('button.btn-red', { onclick: ctrl.closeSidebar() }, 'Close'),
-        m('p', 'The sidebar is ' + (sidebar_open ? 'open' : 'closed'))
+        m('p', `The sidebar is ${sidebar_open ? 'open' : 'closed'}`)
       ]),
       m('button' + (sidebar_open ? '.btn-red' : '.btn-teal'), {
         onclick: sidebar_open ? ctrl.closeSidebar() : ctrl.openSidebar()
